@@ -1,0 +1,10 @@
+body {
+    background-image: linear-gradient(to right, rgb(255, 255, 255), rgba(229, 238, 236, 0.8));
+}
+
+// media screen for tablet
+@media screen and (max-width: 991.33px) {
+    body {
+        background-image: linear-gradient(to top, rgb(255, 255, 255), rgba(229, 238, 236, 0.8));
+    }
+}

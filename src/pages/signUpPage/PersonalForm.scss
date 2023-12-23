@@ -1,0 +1,249 @@
+.personal-form-details {
+    position: relative;
+    margin: 80px auto;
+
+    .personal-grid-form {
+        margin: auto 80px;
+
+        .row {
+            position: relative;
+
+            .image-form-box {
+
+                img {
+                    width: 80%;
+                }
+            }
+            .form-input-box {
+                position: relative;
+                text-align: center;
+
+                h1 {
+                    font-family: 'Unbounded', sans-serif;
+                    color: #1c907c;
+                    margin-bottom: 20px;
+                    font-size: 2rem;
+                }
+                form {
+                    input[type=text],
+                    button[type=submit] {
+                        width: 80%;
+                        padding: 8px;
+                        border: 1px ridge #ccc;
+                        outline: none;
+                        border-radius: 6px;
+                    }
+                    button[type=submit] {
+                        border: none;
+                        background-color: #f4910e;
+                    }
+                    input[type=date] {
+                        width: 80%;
+                        padding: 8px;
+                        border: 1px ridge #ccc;
+                        outline: none;
+                        border-radius: 6px;
+                    }
+                    p {
+                        margin-bottom: -20px;
+                        color: #ff0000;
+                        text-align: left;
+                        margin-left: 55px;
+                    }
+                }
+                p.login-page {
+                    color: inherit;
+                    margin-top: 8px;
+                    text-align: center;
+                    // display: inline-block;
+
+                    a {
+                        color: #1c907c;
+                        font-weight: bold;
+                        text-decoration: none;
+                    }
+                }
+                p.login-page:nth-child(3) {
+                    margin-right: 10px;
+                    background-color: linear-gradient(to top, rgb(255, 255, 255), rgba(229, 238, 236, 0.8));
+                    border-radius: 6px;
+                    width: 80%;
+                    margin: auto;
+                    padding: 8px;
+                    margin-top: -3px;
+                    
+                    a {
+                        img {
+                            width: 30px;
+                            margin-left: 15px;
+                        }
+                    }
+                }
+                p.login-page:nth-child(3):hover {
+                    border: 1px ridge #1c907c;
+                }
+            }
+            p.t-c {
+                text-align: center;
+                font-size: 0.9rem;
+                padding: 20px 21% 0;
+                // margin-right: 50px;
+
+                a {
+                    color: inherit;
+                }
+            }
+        }
+    }
+}
+
+// media screen for tablet
+@media screen and (max-width: 1180px) {
+    .personal-form-details {
+        .personal-grid-form {
+            .row {
+                .image-form-box {
+    
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 
+@media screen and (max-width: 991.33px) {
+    .personal-form-details {
+        margin: auto -20px;
+        .personal-grid-form {
+            .row {
+                .image-form-box {
+                    text-align: center;
+    
+                    img {
+                        width: 20%;
+                        text-align: center;
+                        margin-bottom: 30px;
+                    }
+                }
+                .form-input-box {
+                    h1 {
+                        font-size: 1.7rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 760.33px) {
+    .personal-form-details {
+        .personal-grid-form {
+            .row {
+                .image-form-box {
+    
+                    img {
+                        width: 30%;
+                    }
+                }
+                .form-input-box {
+                    h1 {
+                        font-size: 1.5rem;
+                    }
+                }
+                p.t-c {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 681.33px) {
+    .personal-form-details {
+        .personal-grid-form {
+            .row {
+                .image-form-box {
+    
+                    img {
+                        width: 30%;
+                    }
+                }
+                .form-input-box {
+                    h1 {
+                        font-size: 1.5rem;
+                    }
+                }
+                p.t-c {
+                    font-size: 0.7rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 541.33px) {
+    .personal-form-details {
+        .personal-grid-form {
+            .row {
+                .image-form-box {
+    
+                    img {
+                        width: 30%;
+                    }
+                }
+                .form-input-box {
+                    h1 {
+                        font-size: 1.5rem;
+                    }
+                }
+                p.login-page:nth-child(3) {
+                    
+
+                    a {
+                        img {
+                            width: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 425.33px) {
+    .personal-form-details {
+        .personal-grid-form {
+            .row {
+                .image-form-box {
+    
+                    img {
+                        width: 30%;
+                    }
+                }
+                .form-input-box {
+                    h1 {
+                        font-size: 1.5rem;
+                    }
+
+                    form {
+                        input[type=text],
+                        input[type=date],
+                        button[type=submit] {
+                            width: 100%;
+                        }
+                    }
+                    p.login-page {
+                        margin-left: 0;
+                        font-size: 0.8rem;
+                    }
+                }
+                p.t-c {
+                    font-size: 0.6rem;
+                }
+            }
+        }
+    }
+}
