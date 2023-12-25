@@ -90,6 +90,7 @@ function PersonalForm() {
                             </div>
                             <br/>
                             <button type="submit"><img src={arrowRgt} alt="arrow-right-icon" style={{width: "25px"}} /></button>
+                            <p className="google-page"><a href="">or <span>Sign in</span><img src={googleIcon} alt="google-icon" style={{width: "25px"}} /></a></p>
                         </form>
                     )}
 
@@ -97,14 +98,12 @@ function PersonalForm() {
                     {currentForm === 2 && (
                         <AddressForm />
                     )}
-
                     <p className="login-page">Already have an account? <a href="">Login</a></p>
-                    <p className="google-page"><a href="">or <span>Sign in</span><img src={googleIcon} alt="google-icon" style={{width: "25px"}} /></a></p>
                 </div>
-                <hr style={{margin: "20px 0 -20px", padding: "5px"}} />
-                <p className="t-c">By clicking this button you confirm that you have read and agree to the <a href="">Terms and Conditions</a> and <a href="">Privacy Policy</a> of the company and confirm that you are of legal age.</p>
             </div>
         </div>
+        <hr style={{margin: "25px 0 -20px", padding: "5px"}} />
+        <p className="t-c">By clicking this button you confirm that you have read and agree to the <a href="">Terms and Conditions</a> and <a href="">Privacy Policy</a> of the company and confirm that you are of legal age.</p>
     </div>
   );
 }

@@ -2,9 +2,9 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import axios from "axios";
+import googleIcon from "./assets/Google.png";
 import arrowRgt from "./assets/arrow-right.svg";
 import "./PersonalForm.scss";
-import "./AddressForm.scss";
 import { useState } from "react";
 import ProfileForm from "./ProfileForm";
 // 
@@ -37,7 +37,7 @@ function AddressForm() {
     };
     
 
-  return (
+  return ( // there's a bug that doesn't allow the enter button to be trigger when the user don't input any details in this form
     <div className="address-form-details">
       <div className="form-input-box">
             {currentForm === 2 && (
@@ -56,6 +56,7 @@ function AddressForm() {
                     </div>
                     <br/>
                     <button type="submit"><img src={arrowRgt} alt="arrow-right-icon" style={{width: "25px"}} /></button>
+                    <p className="google-page"><a href="">or <span>Sign in</span><img src={googleIcon} alt="google-icon" style={{width: "25px"}} /></a></p>
                 </form>
             )}
 

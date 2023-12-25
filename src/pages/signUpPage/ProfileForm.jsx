@@ -4,6 +4,7 @@ import * as yup from "yup";
 import axios from "axios";
 import arrowRgt from "./assets/arrow-right.svg";
 import "./PersonalForm.scss";
+import googleIcon from "./assets/Google.png";
 // 
 
 
@@ -57,6 +58,7 @@ function ProfileForm() {
                 </div>
                 <br/>
                 <button type="submit"><img src={arrowRgt} alt="arrow-right-icon" style={{width: "25px"}} /></button>
+                <p className="google-page"><a href="">or <span>Sign in</span><img src={googleIcon} alt="google-icon" style={{width: "25px"}} /></a></p>
             </form>
         </div>
     </div>
