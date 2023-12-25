@@ -37,6 +37,18 @@ function PersonalForm() {
         resolver: yupResolver(e2pValidationSchema)
     });
 
+    const handleSignIn = async () => {
+        const emailOptions = ["user1@example.com", "user2@example.com", "user3@example.com"];
+    
+        const selectedEmail = await prompt('Choose your email:', emailOptions.join('\n'));
+    
+        if (selectedEmail && emailOptions.includes(selectedEmail)) {
+          console.log(`Signed in with email: ${selectedEmail}`);
+        } else {
+          console.log('Sign-in canceled or invalid email selected.');
+        }
+    };
+
     const onSubmit = async (formData) => {
         try {
             const response = await axios.post(/* post response */ "https://jsonplaceholder.typicode.com/posts", formData);
@@ -90,7 +102,9 @@ function PersonalForm() {
                             </div>
                             <br/>
                             <button type="submit"><img src={arrowRgt} alt="arrow-right-icon" style={{width: "25px"}} /></button>
-                            <p className="google-page"><a href="">or <span>Sign in</span><img src={googleIcon} alt="google-icon" style={{width: "25px"}} /></a></p>
+                            <div>
+                                <p className="google-page" onClick={handleSignIn}><a href="">or <span>Sign in</span><img src={googleIcon} alt="google-icon" style={{width: "25px"}} /></a></p>
+                            </div>
                         </form>
                     )}
 
