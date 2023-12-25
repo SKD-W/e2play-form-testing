@@ -2,7 +2,6 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import axios from "axios";
-// import signUpImg from "./assets/Asset 13.png";
 import arrowRgt from "./assets/arrow-right.svg";
 import "./PersonalForm.scss";
 import "./AddressForm.scss";
@@ -59,9 +58,12 @@ function AddressForm() {
                     <button type="submit"><img src={arrowRgt} alt="arrow-right-icon" style={{width: "25px"}} /></button>
                 </form>
             )}
+
+            {/* profile form here */}
             {currentForm === 3 && (
                 <ProfileForm />
             )}
+
         </div>
     </div>
   );

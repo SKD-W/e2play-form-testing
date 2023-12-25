@@ -2,11 +2,12 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import axios from "axios";
-// import signUpImg from "./assets/Asset 13.png";
 import arrowRgt from "./assets/arrow-right.svg";
 import "./PersonalForm.scss";
+// 
 
 
+// get formData for profile details <form/>
 const profileValidationSchema = yup.object().shape({
     username: yup.string().required("Username is required"),
     password: yup.string().required("Password is required"),
@@ -23,7 +24,7 @@ function ProfileForm() {
     const onSubmit = async (formData) => {
         try {
             const response = await axios.post(/* post response */ "https://jsonplaceholder.typicode.com/posts", formData);
-            console.log(response.data);
+            console.log("Response Data:", response.data);
         } catch (error) {
             console.error("Axios Error:", error);
         }
@@ -56,7 +57,6 @@ function ProfileForm() {
                 </div>
                 <br/>
                 <button type="submit"><img src={arrowRgt} alt="arrow-right-icon" style={{width: "25px"}} /></button>
-                {/* <p className="login-page">Already have an account? <a href="">Login</a></p> */}
             </form>
         </div>
     </div>

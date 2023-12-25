@@ -28,7 +28,6 @@ const e2pValidationSchema = yup.object().shape({
 
         return userAge > 18 || (userAge === 18 && birthMonth >= 0);
     }),
-    // personal details yup form stops
 });  
 
 function PersonalForm() {
@@ -41,25 +40,13 @@ function PersonalForm() {
     const onSubmit = async (formData) => {
         try {
             const response = await axios.post(/* post response */ "https://jsonplaceholder.typicode.com/posts", formData);
-            console.log(response.data);
+            console.log("Response Data:", response.data);
 
             setCurrentForm(currentForm => currentForm + 1);
         } catch (error) {
             console.error("Axios Error:", error);
-            console.log("Request config:", error.config);
-            console.log("Response status:", error.response.status);
-            console.log("Response data:", error.response.data);
         }
 
-        // if (currentForm === 1) {
-        //     setCurrentForm(2);
-
-        //     if (currentForm === 2) {
-        //         setCurrentForm(3);
-        //     } else if (currentForm === isNaN) {
-        //         setCurrentForm(3);
-        //     }
-        // }
         setCurrentForm(currentForm + 1);
     };
 
@@ -105,18 +92,16 @@ function PersonalForm() {
                             <button type="submit"><img src={arrowRgt} alt="arrow-right-icon" style={{width: "25px"}} /></button>
                         </form>
                     )}
+
                     {/* address form here */}
                     {currentForm === 2 && (
                         <AddressForm />
                     )}
 
-                    {/* {currentForm === 3 && (
-                        <ProfileForm />
-                    )} */}
                     <p className="login-page">Already have an account? <a href="">Login</a></p>
                     <p className="google-page"><a href="">or <span>Sign in</span><img src={googleIcon} alt="google-icon" style={{width: "25px"}} /></a></p>
                 </div>
-                {/* <hr style={{margin: "40px 0 -20px"}} /> */}
+                <hr style={{margin: "20px 0 -20px", padding: "5px"}} />
                 <p className="t-c">By clicking this button you confirm that you have read and agree to the <a href="">Terms and Conditions</a> and <a href="">Privacy Policy</a> of the company and confirm that you are of legal age.</p>
             </div>
         </div>
