@@ -4,8 +4,6 @@ import "./SignUp.scss";
 
 // () => for signUp forms
 function SignUp() {
-
-
     return (
         <>
             <PersonalForm />
