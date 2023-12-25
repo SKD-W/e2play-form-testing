@@ -2,6 +2,7 @@
 .personal-form-details {
     position: relative;
     margin: auto;
+    padding: 0;
 
     .personal-grid-form {
         margin: auto 70px;
@@ -10,6 +11,7 @@
             position: relative;
             margin: auto;
             width: 100%;
+            padding-top: 20px;
 
             .image-form-box {
 
@@ -34,9 +36,6 @@
                     text-align: center;
                     margin: auto;
 
-                    input {
-                        margin-bottom: 3px;
-                    }
                     input[type=text],
                     button[type=submit] {
                         width: 80%;
@@ -58,7 +57,7 @@
                         border: 1px ridge #ccc;
                         outline: none;
                         border-radius: 6px;
-                        color: #000000cc;
+                        color: #7e7575;
                     }
                     p {
                         margin-bottom: -23px;
@@ -113,7 +112,7 @@
     p.t-c {
         text-align: center;
         font-size: 1rem;
-        padding: 30px;
+        padding: 30px 30px 0;
 
         a {
             color: inherit;
@@ -181,7 +180,7 @@
                         input[type=text],
                         input[type=date],
                         button[type=submit] {
-                            width: 90%;
+                            width: 95%;
                         }
                     }
                 }
