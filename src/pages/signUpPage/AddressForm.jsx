@@ -4,7 +4,6 @@ import * as yup from "yup";
 import axios from "axios";
 import googleIcon from "./assets/Google.png";
 import arrowRgt from "./assets/arrow-right.svg";
-// import PersonalForm from "./PersonalForm";
 import "./PersonalForm.scss";
 import { useState } from "react";
 import ProfileForm from "./ProfileForm";
@@ -26,13 +25,14 @@ function AddressForm() {
         resolver: yupResolver(addressValidationSchema)
     });
 
-    const handleSignIn = async () => {
+    // () => for email validation
+    const handleSignIn = async (event) => {
         const emailOptions = ['user1@example.com', 'user2@example.com', 'user3@example.com'];
     
         const selectedEmail = await prompt('Choose your email:', emailOptions.join('\n'));
-    
+        event.preventDefault();
+
         if (selectedEmail && emailOptions.includes(selectedEmail)) {
-          // Simulate signing in with the selected email
           console.log(`Signed in with email: ${selectedEmail}`);
         } else {
           console.log('Sign-in canceled or invalid email selected.');

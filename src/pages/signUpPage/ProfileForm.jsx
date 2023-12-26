@@ -1,8 +1,7 @@
 import { useForm } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
+import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import axios from "axios";
-import arrowRgt from "./assets/arrow-right.svg";
 import "./PersonalForm.scss";
 import googleIcon from "./assets/Google.png";
 // 
@@ -12,7 +11,7 @@ import googleIcon from "./assets/Google.png";
 const profileValidationSchema = yup.object().shape({
     username: yup.string().required("Username is required"),
     password: yup.string().required("Password is required"),
-    confirmPassword: yup.string().oneOf([yup.ref('password'), null], "Passwords must match").required("Please Confirm Password"),
+    confirmPassword: yup.string().oneOf([yup.ref("password"), null], "Passwords must match").required("Please Confirm Password"),
 });
     
 
@@ -22,16 +21,17 @@ function ProfileForm() {
         resolver: yupResolver(profileValidationSchema),
     });
 
-    const handleGoogleSignIn = async () => {
-        const emailOptions = ['user1@example.com', 'user2@example.com', 'user3@example.com'];
+    // () => for email validation
+    const handleGoogleSignIn = async (event) => {
+        const emailOptions = ["user1@example.com", "user2@example.com", "user3@example.com"];
     
-        const selectedEmail = await prompt('Choose your email:', emailOptions.join('\n'));
-    
+        const selectedEmail = await prompt("Choose your email:", emailOptions.join("\n"));
+        event.preventDefault();
+        
         if (selectedEmail && emailOptions.includes(selectedEmail)) {
-          // Simulate signing in with the selected email
           console.log(`Signed in with email: ${selectedEmail}`);
         } else {
-          console.log('Sign-in canceled or invalid email selected.');
+          console.log("Sign-in canceled or invalid email selected.");
         }
     };
 
@@ -57,20 +57,20 @@ function ProfileForm() {
                 </div>
                 <br/>
                 <div>
-                    <input type="text" id="pWrd" name="pWrd" placeholder="Create Password" {...register("password")} />
+                    <input type="password" id="pWrd" name="pWrd" placeholder="Create Password" {...register("password")} />
                     {errors.password &&
                         <p>{errors.password.message}</p>
                     }
                 </div>
                 <br/>
                 <div>
-                    <input type="text" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" {...register("confirmPassword")} />
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" {...register("confirmPassword")} />
                     {errors.confirmPassword &&
                         <p>{errors.confirmPassword.message}</p>
                     }
                 </div>
                 <br/>
-                <button type="submit"><img src={arrowRgt} alt="arrow-right-icon" style={{width: "25px"}} /></button>
+                <button type="submit" style={{textTransform: "uppercase", fontSize: "0.8rem", fontWeight: "bold", color: "#fff"}}>Create an account</button>
                 <p className="google-page" onClick={handleGoogleSignIn}><a href="">or <span>Sign in</span><img src={googleIcon} alt="google-icon" style={{width: "25px"}} /></a></p>
             </form>
         </div>

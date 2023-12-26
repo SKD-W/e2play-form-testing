@@ -15,7 +15,7 @@ import { useState } from "react";
 const e2pValidationSchema = yup.object().shape({
     firstName: yup.string().required("First name is required"),
     lastName: yup.string().required("Last name is required"),
-    sms: yup.string().required("Phone number is required").matches(/^\d{10}$/, "Phone number must be 10 digits"),
+    sms: yup.string().required("Phone number is required").matches(/^\d{11}$/, "Phone number must be 11 digits"),
     dateOfBirth: yup.date().nullable().required("Date of birth is required").transform((originalValue) => {
         return originalValue === "" ? null : originalValue;
     })
@@ -37,18 +37,28 @@ function PersonalForm() {
         resolver: yupResolver(e2pValidationSchema)
     });
 
-    const handleSignIn = async () => {
-        const emailOptions = ["user1@example.com", "user2@example.com", "user3@example.com"];
-    
-        const selectedEmail = await prompt('Choose your email:', emailOptions.join('\n'));
-    
-        if (selectedEmail && emailOptions.includes(selectedEmail)) {
-          console.log(`Signed in with email: ${selectedEmail}`);
-        } else {
-          console.log('Sign-in canceled or invalid email selected.');
+    // () => for email validation
+    const handleSignIn = async (event) => {
+        try {
+          const emailOptions = ["user1@example.com", "user2@example.com", "user3@example.com"];
+          
+          const selectedEmail = await window.prompt('Choose your email:', emailOptions.join('\n'));
+          event.preventDefault();
+      
+          if (selectedEmail && emailOptions.includes(selectedEmail)) {
+            console.log(`Signed in with email: ${selectedEmail}`);
+          } else {
+            console.error('Sign-in canceled or invalid email selected.');
+          }
+        } catch (error) {
+          console.error('An error occurred:', error);
         }
     };
 
+    // () => for login
+    
+
+    // async () => { }
     const onSubmit = async (formData) => {
         try {
             const response = await axios.post(/* post response */ "https://jsonplaceholder.typicode.com/posts", formData);
@@ -112,11 +122,13 @@ function PersonalForm() {
                     {currentForm === 2 && (
                         <AddressForm />
                     )}
-                    <p className="login-page">Already have an account? <a href="">Login</a></p>
+                    <div>
+                        <p className="login-page">Already have an account? <a href="">Login</a></p>
+                    </div>
                 </div>
             </div>
         </div>
-        <hr style={{margin: "25px 0 -20px", padding: "5px"}} />
+        <hr style={{margin: "25px 0 -20px", padding: "5px 0"}} />
         <p className="t-c">By clicking this button you confirm that you have read and agree to the <a href="">Terms and Conditions</a> and <a href="">Privacy Policy</a> of the company and confirm that you are of legal age.</p>
     </div>
   );

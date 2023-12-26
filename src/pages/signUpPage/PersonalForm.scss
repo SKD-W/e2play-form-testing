@@ -37,6 +37,7 @@
                     margin: auto;
 
                     input[type=text],
+                    input[type=password],
                     button[type=submit] {
                         width: 80%;
                         padding: 9px;
@@ -48,12 +49,12 @@
                     button[type=submit] {
                         border: none;
                         background-color: #f4910e;
-                        margin-bottom: 10px;
+                        margin-bottom: 15px;
                         margin-top: -5px;
                     }
                     input[type=date] {
                         width: 80%;
-                        padding: 8px;
+                        padding: 9px;
                         border: 1px ridge #ccc;
                         outline: none;
                         border-radius: 6px;
@@ -171,7 +172,7 @@
                 .image-form-box {
     
                     img {
-                        width: 35%;
+                        width: 45%;
                     }
                 }
                 .form-input-box {
@@ -179,6 +180,7 @@
                     form {
                         p.google-page,
                         input[type=text],
+                        input[type=password],
                         input[type=date],
                         button[type=submit] {
                             width: 95%;

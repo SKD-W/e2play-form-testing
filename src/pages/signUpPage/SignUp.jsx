@@ -3,7 +3,7 @@ import "./SignUp.scss";
 
 
 // () => for signUp forms
-function SignUp() {
+function SignUp() { 
     return (
         <>
             <PersonalForm />
