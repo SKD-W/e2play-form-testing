@@ -1,0 +1,97 @@
+// 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    // background-color: #333;
+    background-color: #1c907c;
+    color: white;
+
+    .brand-logo {
+        width: 50%;
+        margin: 0;
+
+        a {
+            img {
+                margin-left: 30px;
+                width: 50%;
+            }
+        }
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        margin-right: 30px;
+  
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            margin-right: 20px;
+        }
+        a:nth-child(1) {
+            border-bottom: 3px solid #f4910e;
+        }
+        a:nth-child(6) {
+            margin-left: 30px;
+            border: 1.5px solid #f4910e;
+            padding: 0px 8px;
+            border-radius: 3px;
+        }
+        a:nth-child(6):hover {
+            border: 2px ridge #1c907c;
+            color: #f4910e;
+            justify-self: end;
+        }
+    }
+  
+    .navbar-toggler {
+        cursor: pointer;
+        display: none; /* Hide toggler on larger screens */
+        font-size: 1.5rem;
+        color: #fff;
+        border: 1px solid #f4910e;
+    }
+  
+    @media (max-width: 894px) {
+        .nav-links {
+            flex-direction: column;
+            position: absolute;
+            top: 60px; /* Adjust as needed based on your navbar height */
+            left: 0;
+            // background-color: #333;
+            background-color: #1c907c;
+            width: 100%;
+            display: none;
+  
+        a {
+            margin: 10px; // Add some spacing for mobile view
+        }
+        a:nth-child(1) {
+            border: none;
+        }
+      }
+  
+        .nav-links.open {
+            display: flex;
+        }
+
+        .navbar-toggler {
+            display: block;
+        }
+    }
+    &.open {
+        .navbar-toggler {
+            &:before {
+                content: '✕';
+            }
+        }
+
+        .nav-links {
+            display: flex;
+        }
+    }
+}
+  
+  
