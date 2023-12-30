@@ -1,95 +1,175 @@
 // 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    // background-color: #333;
-    background-color: #1c907c;
-    color: white;
+    position: relative;
+    margin: auto;
+    padding: 10px 50px 0;
+    z-index: 1000;
 
-    .brand-logo {
-        width: 50%;
-        margin: 0;
-
-        a {
-            img {
-                margin-left: 30px;
-                width: 50%;
-            }
-        }
-    }
-    .nav-links {
+    .navbar-container {
         display: flex;
-        flex-direction: row;
-        margin-right: 30px;
-  
-        a {
-            text-decoration: none;
-            color: white;
-            font-size: 1rem;
-            margin-right: 20px;
-        }
-        a:nth-child(1) {
-            border-bottom: 3px solid #f4910e;
-        }
-        a:nth-child(6) {
-            margin-left: 30px;
-            border: 1.5px solid #f4910e;
-            padding: 0px 8px;
-            border-radius: 3px;
-        }
-        a:nth-child(6):hover {
-            border: 2px ridge #1c907c;
-            color: #f4910e;
-            justify-self: end;
-        }
-    }
-  
-    .navbar-toggler {
-        cursor: pointer;
-        display: none; /* Hide toggler on larger screens */
-        font-size: 1.5rem;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1c907c;
+        border-bottom: 1px ridge #fff;
         color: #fff;
-        border: 1px solid #f4910e;
-    }
-  
-    @media (max-width: 894px) {
-        .nav-links {
-            flex-direction: column;
-            position: absolute;
-            top: 60px; /* Adjust as needed based on your navbar height */
-            left: 0;
-            // background-color: #333;
-            background-color: #1c907c;
-            width: 100%;
-            display: none;
-  
-        a {
-            margin: 10px; // Add some spacing for mobile view
-        }
-        a:nth-child(1) {
-            border: none;
-        }
-      }
-  
-        .nav-links.open {
-            display: flex;
-        }
+        padding-bottom: 5px;
 
-        .navbar-toggler {
-            display: block;
-        }
-    }
-    &.open {
-        .navbar-toggler {
-            &:before {
-                content: '✕';
+        .brand-logo {
+            width: 40%;
+    
+            a {
+                img {
+                    width: 60%;
+                }
             }
         }
-
         .nav-links {
             display: flex;
+            flex-direction: row;
+      
+            ul {
+                margin: auto;
+    
+                li {
+                    display: inline-block;
+    
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                        font-size: 1rem;
+                        margin-right: 20px;
+                    }
+                    a:hover {
+                        border-bottom: 2px solid #f4910e;
+                    }
+                    a:nth-child(1):hover {
+                        border-top: none;
+                    }
+                }
+                li:nth-child(1) {
+                    a:nth-child(1) {
+                        border-top: 2px solid #f4910e;
+                    }
+                    a:nth-child(1):hover {
+                        border-bottom: 2px solid #f4910e;
+                        border-top: none;
+                    }
+                }
+            }
+        }
+        .profile-account {
+            position: relative;
+    
+            a {
+                padding-right: 30px;
+                text-decoration: none;
+                color: inherit;
+                border: 1px solid #f4910e;
+                padding: 0 10px;
+                border-radius: 3px;
+            }
+            a:hover {
+                background-color: #0ec76d;
+                border: 1px solid #0ec76d;
+            }
+        }
+      
+        .navbar-toggler {
+            cursor: pointer;
+            display: none;
+            font-size: 1.5rem;
+            color: #fff;
+            border: 1px solid #f4910e;
+        }
+
+        @media (max-width: 1214px) {
+            .nav-links {
+                flex-direction: column;
+                position: absolute;
+                top: 90%;
+                left: 0;
+                background-color: #1c907c;
+                display: none;
+                width: 100%;
+                margin: auto;
+                padding: 0 30px;
+      
+                ul {
+                    margin: auto 0;
+                    padding: 20px 30px;
+                    
+                    li {
+                        display: block;
+                        padding: 10px 0;
+
+                        a {
+                            font-size: 1.3rem;
+                        }
+                    }
+                }
+            }
+      
+            .nav-links.open {
+                display: flex;
+            }
+    
+            .navbar-toggler {
+                display: block;
+            }
+        }
+        &.open {
+            .navbar-toggler {
+                &:before {
+                    content: '✕';
+                }
+            }
+    
+            .nav-links {
+                display: flex;
+            }
+        }
+    }
+    // 
+    @media screen and (max-width: 1024.33px) {
+        .navbar-container {
+            .brand-logo {
+                a {
+                    img {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+    // 
+    @media screen and (max-width: 768.33px) {
+        padding: 10px 20px;
+
+        .navbar-container {
+            .brand-logo {
+                a {
+                    img {
+                        width: 90%;
+                    }
+                }
+            }
+            .nav-links {
+                ul {
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+    // 
+    @media screen and (max-width: 425.33px) {
+        .navbar-container {
+            .brand-logo {
+                a {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
         }
     }
 }
